@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[JJ's Notes]]></title>
-  <subtitle><![CDATA[On Linux]]></subtitle>
+  <title><![CDATA[JJ's Notes on Linux]]></title>
+  
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-08-30T19:48:42.000Z</updated>
+  <updated>2015-08-30T20:33:26.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,24 +16,40 @@
   
   <entry>
     <title><![CDATA[Hello Hexo]]></title>
-    <link href="http://yoursite.com/2015/08/30/hello-hexo/"/>
-    <id>http://yoursite.com/2015/08/30/hello-hexo/</id>
-    <published>2015-08-30T19:48:42.000Z</published>
-    <updated>2015-08-30T19:48:42.000Z</updated>
-    <content type="html"><![CDATA[<p>These notes are built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> which is a fast and simple blog framework made with NodeJS.</p>
-<p>Issues with Hexo can be chased on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>. Although I have found <a href="http://jr0cket.co.uk/hexo/index.html" target="_blank" rel="external">jr0ckets</a> the most usefull of all Hexo guides.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <link href="http://yoursite.com/2015/08/31/hello-hexo/"/>
+    <id>http://yoursite.com/2015/08/31/hello-hexo/</id>
+    <published>2015-08-31T20:00:00.000Z</published>
+    <updated>2015-08-30T20:33:26.000Z</updated>
+    <content type="html"><![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple [Node.JS(<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a>) framework.</p>
+<p>I’ve lent on several other posts to get to this point, the most useful of which was <a href="http://jr0cket.co.uk/hexo/index.html" target="_blank" rel="external">jr0ckets</a>.</p>
+<p>Issues can be tracked on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><p>Once Hexo has been installed</p>
+<h3 id="Create_a_new_post">Create a new post</h3><pre><code>$hexo new "My New Post" </code></pre>
+
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>Although my most common deployment method is</p>
+<pre><code>$hexo generate --deploy </code></pre>
+
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>These notes are built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> which is a fast and simple blog framework made]]>
+    <![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple [Node.JS(<a href="https://nodej]]>
     </summary>
+    
+      <category term="Fedora22" scheme="http://yoursite.com/tags/Fedora22/"/>
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="NPM" scheme="http://yoursite.com/tags/NPM/"/>
+    
+      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
     
   </entry>
   
