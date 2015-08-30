@@ -2,6 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/26/Building-Digital-Signage-with-Pi/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/18/How-To-Install-LAMP-on-Fedora/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/05/06/A-Secure-And-Fast-FTP-Server-VSFTPD/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/20/Working-with-Screen/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/05/01/Using-Vi/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/21/Linux-101/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/20/Starting-SSH-with-Fedora/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/20/Meteor-with-NodeJS/</loc>
+    <lastmod>2015-08-30T17:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/08/30/changed-yml-with-two-repos/</loc>
     <lastmod>2015-08-30T13:07:01.000Z</lastmod>
   </url>

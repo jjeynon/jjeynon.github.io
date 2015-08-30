@@ -75,4 +75,399 @@
     
   </entry>
   
+  <entry>
+    <title><![CDATA[A Secure and Fast FTP Server VSFTPD]]></title>
+    <link href="http://yoursite.com/2015/05/06/A-Secure-And-Fast-FTP-Server-VSFTPD/"/>
+    <id>http://yoursite.com/2015/05/06/A-Secure-And-Fast-FTP-Server-VSFTPD/</id>
+    <published>2015-05-06T09:25:36.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<pre><code>yum install vsftpd</code></pre>
+
+<pre><code>systemctl start vsftpd</code></pre>
+
+<pre><code>chkconfig vsftpd on</code></pre>
+
+<pre><code>firewall-cmd --zone=FedoraWorkstation --add-port=21/tcp
+firewall-cmd --zone=FedoraWorkstation --add-port=20/tcp</code></pre>
+
+<pre><code>setsebool -P ftp_home_dir 1</code></pre>
+]]></content>
+    <summary type="html">
+    <![CDATA[<pre><code>yum install vsftpd</code></pre>
+
+<pre><code>systemctl start vsftpd</code></pre>
+
+<pre><code>chkconfig vsftpd on</code></pre>
+
+<pr]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Using Vi]]></title>
+    <link href="http://yoursite.com/2015/05/01/Using-Vi/"/>
+    <id>http://yoursite.com/2015/05/01/Using-Vi/</id>
+    <published>2015-05-01T10:00:00.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Learnt an interesting lesson: dont use arrow keys in Vi.</p>
+<p>Press ‘i’ to insert into the document.</p>
+<p>Press ‘o’ to go to the next line.</p>
+<p>When Vi gets completly weird, try pressing escape followed with<br>:set nocompatible</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Learnt an interesting lesson: dont use arrow keys in Vi.</p>
+<p>Press ‘i’ to insert into the document.</p>
+<p>Press ‘o’ to go to the next]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="Vi" scheme="http://yoursite.com/tags/Vi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Building Digital Signage with Pi]]></title>
+    <link href="http://yoursite.com/2015/04/26/Building-Digital-Signage-with-Pi/"/>
+    <id>http://yoursite.com/2015/04/26/Building-Digital-Signage-with-Pi/</id>
+    <published>2015-04-26T11:11:42.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>I would have chosen Fedora to keep in with works RedHat family, but the ARM Cortex-A7 SoC architecture is’nt quite that simple for Fedora 21 yet. Pidora is availble but to keep things easy I’m going with the trusted Raspbian image available directly from the Raspberry Pi site.</p>
+<pre><code>https://www.raspberrypi.org/downloads/ </code></pre>
+
+<h1 id="Deploy_the_Raspbian_image_to_the_MicroSD_card_which_needs_to_be_formatted_in_FAT32-">Deploy the Raspbian image to the MicroSD card which needs to be formatted in FAT32.</h1><p>Locate where the the MicroSD card is mounted (not the parition).</p>
+<pre><code>diskutil list</code></pre>
+
+<pre><code>diskutil unmountDisk /dev/disk# </code></pre>
+
+<p>DD the image to the MicroSD card.</p>
+<pre><code>sudo dd bs=1m if=image.img of=/dev/<disk#< code=""></disk#<></code></pre>
+
+<p>the command should look something like this</p>
+<pre><code>sudo dd bs=1m if=2015-02-16-raspbian-wheezy.img of=/dev/disk4</code></pre>
+
+<p>When this starts no update of the dd is visable. Leave it alone and when it is finished the output will be printed,</p>
+<pre><code>3125+0 records in
+3125+0 records out
+3276800000 bytes transferred in 2183.613205 secs (1500632 bytes/sec)</code></pre>
+
+<p>Then</p>
+<pre><code>sudo diskutil eject /dev/disk#</code></pre>
+
+<p>Or you can open Disk Utility and eject the SD card</p>
+<p>#Setting up Raspbian as for Digital Signage</p>
+<p>On inital boot of the Raspbian, set the Raspberry Pi software configuration;</p>
+<p>A) Expand Filesystem (to use all available SD storage).</p>
+<p>B) Set reboot to the default desktop enviroment.</p>
+<p>Post reboot</p>
+<p>Set the a password for root (no password is set by default).</p>
+<pre><code>sudo passwd root</code></pre>
+
+<p>chose a root password,</p>
+<p>Now with the user: pi and password: raspberry, check you can SSH to the terminal</p>
+<pre><code>ssh pi@X.X.X.X</code></pre>
+
+<p>#To set a static IP </p>
+<pre><code>sudo vi /etc/network/interfaces</code></pre>
+
+<p>and change the line</p>
+<p>iface eth0 inet dhcp</p>
+<p>to add the following:</p>
+<pre><code>iface eth0 inet static
+address X.X.X.X
+netmask X.X.X.X
+gateway X.X.X.X
+</code></pre>
+
+<p>#Deploying the Applications</p>
+<pre><code>sudo apt-get update && sudo apt-get upgrade -y</code></pre>
+
+<p>Install Chromium, X11 Server Utilites and Unclutter (which removes the cursor from the screen).</p>
+<pre><code>sudo apt-get install chromium x11-xserver-utils unclutter</code></pre>
+
+<p>Make Chromium full screen</p>
+<pre><code>sudo vi /etc/xdg/lxsession/LXDE-pi/autostart </code></pre> 
+
+<p>Comment the line out:</p>
+<p>@xscreensaver -no-splash</p>
+<p>And add these lines underneath the screensaver line:</p>
+<p>@xset s off<br>@xset -dpms<br>@xset s noblank</p>
+<p>This disables power management settings and stops the screen blanking after a period of inactivity.</p>
+<p>Now that is done we should prevent any error messages displaying on the screen in the instance that someone accidentally power cycles the pi without going through the shutdown procedure. To do this we add the following line underneath the lines you just added.</p>
+<p>@rm -rf ~/.config/chromium/Default</p>
+<p>(this following line is alternate, and saved here as a record:)<br>@sed -i ‘s/“exited_cleanly”: false/“exited_cleanly”: true/‘ ~/.config/chromium/Default/Preferences</p>
+<p>Finally we need to tell chromium to start and which page to load once it boots without error dialogs and in Kiosk mode. To do this add the following line to the bottom of this autostart file.</p>
+<p>@chromium –noerrdialogs –kiosk <a href="http://www.page-to.display" target="_blank" rel="external">http://www.page-to.display</a> –incognito</p>
+<p>After the above work, the Autostart file should now look like this:</p>
+<pre><code>
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+
+@xset s off
+@xset -dpms
+@xset s noblank
+
+@rm -rf ~/.config/chromium/Default
+#@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+
+@chromium --noerrdialogs --kiosk http://cnnlondon/bigscreen/ --incognito
+</code></pre>
+
+<p>Then test with a reboot                                                                    </p>
+<pre><code>sudo reboot</code></pre>
+
+<p>To make sure your RaspberryPi boots to desktop you will want to type the command after logging in</p>
+<pre><code>sudo raspi-config</code></pre>
+
+<p>To set the HDMI resolution right for TV’s, modify the file /boot/config.txt</p>
+<pre><code>1920×1080 at 32bit depth, DMT mode
+disable_overscan=1
+framebuffer_width=1920
+framebuffer_height=1080
+framebuffer_depth=32
+framebuffer_ignore_alpha=1
+hdmi_pixel_encoding=1
+hdmi_group=2
+</code></pre>
+
+<p>This completes the build.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I would have chosen Fedora to keep in with works RedHat family, but the ARM Cortex-A7 SoC architecture is’nt quite that simple for Fedora]]>
+    </summary>
+    
+      <category term="Chartbeat" scheme="http://yoursite.com/tags/Chartbeat/"/>
+    
+      <category term="ChartbeatBiz" scheme="http://yoursite.com/tags/ChartbeatBiz/"/>
+    
+      <category term="ChartbeatSports" scheme="http://yoursite.com/tags/ChartbeatSports/"/>
+    
+      <category term="Debian" scheme="http://yoursite.com/tags/Debian/"/>
+    
+      <category term="DigitalSinage" scheme="http://yoursite.com/tags/DigitalSinage/"/>
+    
+      <category term="Pi" scheme="http://yoursite.com/tags/Pi/"/>
+    
+      <category term="dd" scheme="http://yoursite.com/tags/dd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linux 101]]></title>
+    <link href="http://yoursite.com/2015/04/21/Linux-101/"/>
+    <id>http://yoursite.com/2015/04/21/Linux-101/</id>
+    <published>2015-04-21T10:59:41.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Add_a_user">Add a user</h1><p>$ sudo useradd adam</p>
+<p>$ sudo passwd adam</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Add_a_user">Add a user</h1><p>$ sudo useradd adam</p>
+<p>$ sudo passwd adam</p>
+]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Working with Screen]]></title>
+    <link href="http://yoursite.com/2015/04/20/Working-with-Screen/"/>
+    <id>http://yoursite.com/2015/04/20/Working-with-Screen/</id>
+    <published>2015-04-20T16:36:11.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Place holder for working with Screen.</p>
+<p><a href="https://www.gnu.org/software/screen/" target="_blank" rel="external">https://www.gnu.org/software/screen/</a></p>
+<p>Move Mclaren machines to run with Screen in the background.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Place holder for working with Screen.</p>
+<p><a href="https://www.gnu.org/software/screen/" target="_blank" rel="external">https://www.gn]]>
+    </summary>
+    
+      <category term="Meteor" scheme="http://yoursite.com/tags/Meteor/"/>
+    
+      <category term="NodeJS" scheme="http://yoursite.com/tags/NodeJS/"/>
+    
+      <category term="Screen" scheme="http://yoursite.com/tags/Screen/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Starting SSH with Fedora]]></title>
+    <link href="http://yoursite.com/2015/04/20/Starting-SSH-with-Fedora/"/>
+    <id>http://yoursite.com/2015/04/20/Starting-SSH-with-Fedora/</id>
+    <published>2015-04-20T14:11:11.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>$ sudo dnf install openssh-server</p>
+<p>$ sudo service sshd start</p>
+<p>$ sudo service ssh start</p>
+<p>$ sudo chkconfig sshd on</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>$ sudo dnf install openssh-server</p>
+<p>$ sudo service sshd start</p>
+<p>$ sudo service ssh start</p>
+<p>$ sudo chkconfig sshd on</p>
+]]>
+    </summary>
+    
+      <category term="Fedora" scheme="http://yoursite.com/tags/Fedora/"/>
+    
+      <category term="SSH" scheme="http://yoursite.com/tags/SSH/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Meteor with NodeJS]]></title>
+    <link href="http://yoursite.com/2015/04/20/Meteor-with-NodeJS/"/>
+    <id>http://yoursite.com/2015/04/20/Meteor-with-NodeJS/</id>
+    <published>2015-04-20T14:08:37.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Create a user called “meteor” with no password that must have sudo rights to work</p>
+<p>$ useradd meteor</p>
+<p>Install Meteor as the meteor user</p>
+<p>$ sudo -u mclaren curl <a href="https://install.meteor.com/" target="_blank" rel="external">https://install.meteor.com/</a> | sh</p>
+<p>Create directory</p>
+<p>$ mkdir /opt/mclaren</p>
+<p>Change ownership of the directory for group meteor</p>
+<p>$ sudo chown meteor:meteor /opt/mclaren</p>
+<p>Change into the mclaren directory</p>
+<p>$ cd /opt/mclaren</p>
+<p>Pull the threesixty app from the git repository</p>
+<p>$ sudo -u meteor git clone <a href="https://jjeynon@bitbucket.org/johnsanders/threesixty.git" target="_blank" rel="external">https://jjeynon@bitbucket.org/johnsanders/threesixty.git</a></p>
+<p>Change directories into /opt/mclaren/ and check the permissions</p>
+<p>$ ls -la</p>
+<p>drwxr-xr-x. 7 meteor meteor 4096 date time threesixty</p>
+<p>Change directories into /opt/mclaren/threesixty</p>
+<p>$ cd /opt/mclaren/threesixty</p>
+<p>#Start the application as the meteor user</p>
+<p>$ sudo -u meteor /usr/local/bin/meteor</p>
+<p>#Push code changes back to Bit Bucket with GIT</p>
+<p>Check the file changes to be synced with GIT</p>
+<p>$ git status</p>
+<p>And if needed check the difference $ git diff </p>
+<p>Add the files to upload</p>
+<p>$ sudo git add . </p>
+<p>Commit the file changes to Bit Bucket</p>
+<p>$ git commit –m “commit message here ”</p>
+<p>Push the origin to the master</p>
+<p>$ sudo git push origin master</p>
+<p>A final check to confirm the code file changes are synced</p>
+<p>$ git status</p>
+<p>#To kill the process running Meteor</p>
+<p>Check the PID values of the process running</p>
+<p>$ ps aux | grep meteor</p>
+<p>kill the process with the PID number</p>
+<p>$ sudo kill -9 [pid number]</p>
+<p>#Remove Meteor and the application directory from the host machine</p>
+<p>Go to the /opt/mclaren directory</p>
+<p>$ sudo rm –rf threesixty</p>
+<p>$ ls –la</p>
+<p>Then proceed  to re-clone the threesxity application back to /opt/mclaren</p>
+<p>$ sudo -u meteor git clone <a href="https://jjeynon@bitbucket.org/johnsanders/threesixty.git" target="_blank" rel="external">https://jjeynon@bitbucket.org/johnsanders/threesixty.git</a></p>
+<p>Check the files and permissions are correct /opt/mclaren/threesixty</p>
+<p>$ ls -la</p>
+<p>#Future Work</p>
+<p>If Mongo is installed as a stand-alone DB, then Mongo backup and restores can be performed.</p>
+<p>$ mongodump -h 127.0.0.1:3002 –db meteor  –out  ../backups</p>
+<p>$ mongorestore -h 127.0.0.1:3001 –db meteor ../cleandb_elex2015/</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Create a user called “meteor” with no password that must have sudo rights to work</p>
+<p>$ useradd meteor</p>
+<p>Install Meteor as the me]]>
+    </summary>
+    
+      <category term="Mclaren" scheme="http://yoursite.com/tags/Mclaren/"/>
+    
+      <category term="Meteor" scheme="http://yoursite.com/tags/Meteor/"/>
+    
+      <category term="NodeJS" scheme="http://yoursite.com/tags/NodeJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Installing the NVIDIA GTX 980 Graphics card]]></title>
+    <link href="http://yoursite.com/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/"/>
+    <id>http://yoursite.com/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/</id>
+    <published>2015-04-20T13:43:46.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>$ yum local install –nogpgcheck <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm</a> -E %fedora).noarch.rpm <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm</a> -E %fedora).noarch.rpm</p>
+<p>$ yum install akmod-nvidia “kernel-devel-uname-r == $(uname -r)”</p>
+<p>$ yum update -y</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>$ yum local install –nogpgcheck <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm" target="_blank" rel="ex]]>
+    </summary>
+    
+      <category term="Fedora" scheme="http://yoursite.com/tags/Fedora/"/>
+    
+      <category term="Graphics" scheme="http://yoursite.com/tags/Graphics/"/>
+    
+      <category term="NVIDIA" scheme="http://yoursite.com/tags/NVIDIA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[How To Install LAMP on Fedora]]></title>
+    <link href="http://yoursite.com/2015/04/18/How-To-Install-LAMP-on-Fedora/"/>
+    <id>http://yoursite.com/2015/04/18/How-To-Install-LAMP-on-Fedora/</id>
+    <published>2015-04-18T13:48:49.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<p>This was taken from Digital Ocean on building a LAMP server</p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-lamp-linux-apache-mysql-php-on-fedora" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-lamp-linux-apache-mysql-php-on-fedora</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This was taken from Digital Ocean on building a LAMP server</p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-insta]]>
+    </summary>
+    
+      <category term="Apache" scheme="http://yoursite.com/tags/Apache/"/>
+    
+      <category term="Fedora" scheme="http://yoursite.com/tags/Fedora/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+      <category term="PHP" scheme="http://yoursite.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Types of blockquotes in Hexo]]></title>
+    <link href="http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/"/>
+    <id>http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/</id>
+    <published>2015-04-18T13:11:57.000Z</published>
+    <updated>2015-08-30T17:54:21.000Z</updated>
+    <content type="html"><![CDATA[<blockquote><p>content …lorem ipsum dolor sit amet.</p>
+</blockquote>
+<blockquote><p>content</p>
+<footer><strong>[author[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is <span class="tag">a</span> quoted <span class="tag">code</span> test</span><br></pre></td></tr></table></figure>
+<blockquote><br><p>Here is a blockqoute with bigger vertical spacing.</p><br></blockquote>
+
+<p><codeblock><br>This is a quoted code test</codeblock></p>
+<endcodeblock>
+
+<pre><code>sudo dd bs=1m if=path_of_your_image.img of=/dev/diskn</code></pre>
+
+</endcodeblock>]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote><p>content …lorem ipsum dolor sit amet.</p>
+</blockquote>
+<blockquote><p>content</p>
+<footer><strong>[author[</strong><cite>sour]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="NodeJs" scheme="http://yoursite.com/tags/NodeJs/"/>
+    
+  </entry>
+  
 </feed>
