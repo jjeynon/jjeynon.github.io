@@ -61,173 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Meteor-with-NodeJS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/20/Meteor-with-NodeJS/" class="article-date">
-  <time datetime="2015-04-20T14:08:37.000Z" itemprop="datePublished">2015-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/20/Meteor-with-NodeJS/">Meteor with NodeJS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Create a user called “meteor” with no password that must have sudo rights to work</p>
-<p>$ useradd meteor</p>
-<p>Install Meteor as the meteor user</p>
-<p>$ sudo -u mclaren curl <a href="https://install.meteor.com/" target="_blank" rel="external">https://install.meteor.com/</a> | sh</p>
-<p>Create directory</p>
-<p>$ mkdir /opt/mclaren</p>
-<p>Change ownership of the directory for group meteor</p>
-<p>$ sudo chown meteor:meteor /opt/mclaren</p>
-<p>Change into the mclaren directory</p>
-<p>$ cd /opt/mclaren</p>
-<p>Pull the threesixty app from the git repository</p>
-<p>$ sudo -u meteor git clone <a href="https://jjeynon@bitbucket.org/johnsanders/threesixty.git" target="_blank" rel="external">https://jjeynon@bitbucket.org/johnsanders/threesixty.git</a></p>
-<p>Change directories into /opt/mclaren/ and check the permissions</p>
-<p>$ ls -la</p>
-<p>drwxr-xr-x. 7 meteor meteor 4096 date time threesixty</p>
-<p>Change directories into /opt/mclaren/threesixty</p>
-<p>$ cd /opt/mclaren/threesixty</p>
-<p>#Start the application as the meteor user</p>
-<p>$ sudo -u meteor /usr/local/bin/meteor</p>
-<p>#Push code changes back to Bit Bucket with GIT</p>
-<p>Check the file changes to be synced with GIT</p>
-<p>$ git status</p>
-<p>And if needed check the difference $ git diff </p>
-<p>Add the files to upload</p>
-<p>$ sudo git add . </p>
-<p>Commit the file changes to Bit Bucket</p>
-<p>$ git commit –m “commit message here ”</p>
-<p>Push the origin to the master</p>
-<p>$ sudo git push origin master</p>
-<p>A final check to confirm the code file changes are synced</p>
-<p>$ git status</p>
-<p>#To kill the process running Meteor</p>
-<p>Check the PID values of the process running</p>
-<p>$ ps aux | grep meteor</p>
-<p>kill the process with the PID number</p>
-<p>$ sudo kill -9 [pid number]</p>
-<p>#Remove Meteor and the application directory from the host machine</p>
-<p>Go to the /opt/mclaren directory</p>
-<p>$ sudo rm –rf threesixty</p>
-<p>$ ls –la</p>
-<p>Then proceed  to re-clone the threesxity application back to /opt/mclaren</p>
-<p>$ sudo -u meteor git clone <a href="https://jjeynon@bitbucket.org/johnsanders/threesixty.git" target="_blank" rel="external">https://jjeynon@bitbucket.org/johnsanders/threesixty.git</a></p>
-<p>Check the files and permissions are correct /opt/mclaren/threesixty</p>
-<p>$ ls -la</p>
-<p>#Future Work</p>
-<p>If Mongo is installed as a stand-alone DB, then Mongo backup and restores can be performed.</p>
-<p>$ mongodump -h 127.0.0.1:3002 –db meteor  –out  ../backups</p>
-<p>$ mongorestore -h 127.0.0.1:3001 –db meteor ../cleandb_elex2015/</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/20/Meteor-with-NodeJS/" data-id="cidysrg6e000qmfqj40cjd7gx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mclaren/">Mclaren</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meteor/">Meteor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS/">NodeJS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Installing-the-NVIDIA-GTX-980-Graphics-card" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/" class="article-date">
-  <time datetime="2015-04-20T13:43:46.000Z" itemprop="datePublished">2015-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/">Installing the NVIDIA GTX 980 Graphics card</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$ yum local install –nogpgcheck <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm" target="_blank" rel="external">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm</a> -E %fedora).noarch.rpm <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm" target="_blank" rel="external">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm</a> -E %fedora).noarch.rpm</p>
-<p>$ yum install akmod-nvidia “kernel-devel-uname-r == $(uname -r)”</p>
-<p>$ yum update -y</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/20/Installing-the-NVIDIA-GTX-980-Graphics-card/" data-id="cidysrg6o000xmfqjm8j4ukwx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graphics/">Graphics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NVIDIA/">NVIDIA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-How-To-Install-LAMP-on-Fedora" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/18/How-To-Install-LAMP-on-Fedora/" class="article-date">
-  <time datetime="2015-04-18T13:48:49.000Z" itemprop="datePublished">2015-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/18/How-To-Install-LAMP-on-Fedora/">How To Install LAMP on Fedora</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This was taken from Digital Ocean on building a LAMP server</p>
-<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-lamp-linux-apache-mysql-php-on-fedora" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-lamp-linux-apache-mysql-php-on-fedora</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/18/How-To-Install-LAMP-on-Fedora/" data-id="cidysrg6w0013mfqjo111zfyz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fedora/">Fedora</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-Types-of-Blockquotes-in-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/18/Types-of-Blockquotes-in-Hexo/" class="article-date">
@@ -311,7 +144,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -323,23 +156,23 @@
       <ul>
         
           <li>
-            <a href="/2015/08/30/changed-yml-with-two-repos/">changed_yml_with_two_repos</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/30/changed-yml-with-two-gits/">changed_yml_with_two_gits</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/30/blog-post-name/">blog-post-name</a>
-          </li>
-        
-          <li>
             <a href="/2015/08/30/hello-world/">Hello World</a>
           </li>
         
           <li>
             <a href="/2015/05/06/A-Secure-And-Fast-FTP-Server-VSFTPD/">A Secure and Fast FTP Server VSFTPD</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/01/Using-Vi/">Using Vi</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/26/Building-Digital-Signage-with-Pi/">Building Digital Signage with Pi</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/21/Linux-101/">Linux 101</a>
           </li>
         
       </ul>
