@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/08/30/changed-yml-with-two-repos/</loc>
+    <lastmod>2015-08-30T13:07:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/08/30/changed-yml-with-two-gits/</loc>
     <lastmod>2015-08-30T13:01:03.000Z</lastmod>
   </url>
