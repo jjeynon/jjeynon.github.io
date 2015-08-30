@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-08-30T20:33:26.000Z</updated>
+  <updated>2015-08-30T20:41:42.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://yoursite.com/2015/08/31/hello-hexo/"/>
     <id>http://yoursite.com/2015/08/31/hello-hexo/</id>
     <published>2015-08-31T20:00:00.000Z</published>
-    <updated>2015-08-30T20:33:26.000Z</updated>
-    <content type="html"><![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple [Node.JS(<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a>) framework.</p>
+    <updated>2015-08-30T20:41:42.000Z</updated>
+    <content type="html"><![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> framework.</p>
 <p>I’ve lent on several other posts to get to this point, the most useful of which was <a href="http://jr0cket.co.uk/hexo/index.html" target="_blank" rel="external">jr0ckets</a>.</p>
 <p>Issues can be tracked on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick_Start">Quick Start</h2><p>Once Hexo has been installed</p>
@@ -38,10 +38,10 @@
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple [Node.JS(<a href="https://nodej]]>
+    <![CDATA[<p>This blog is built on <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> a fast and simple <a href="https://nodejs.org/" t]]>
     </summary>
     
-      <category term="Fedora22" scheme="http://yoursite.com/tags/Fedora22/"/>
+      <category term="Fedora-22" scheme="http://yoursite.com/tags/Fedora-22/"/>
     
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     

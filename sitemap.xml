@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/08/31/hello-hexo/</loc>
+    <lastmod>2015-08-30T20:41:42.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/</loc>
     <lastmod>2015-08-30T20:38:08.000Z</lastmod>
   </url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://yoursite.com/2015/04/20/Meteor-with-NodeJS/</loc>
     <lastmod>2015-08-30T20:36:27.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2015/08/31/hello-hexo/</loc>
-    <lastmod>2015-08-30T20:33:26.000Z</lastmod>
   </url>
   
   <url>
