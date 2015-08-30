@@ -256,7 +256,7 @@ hdmi_group=2
     <link href="http://yoursite.com/2015/04/20/Working-with-Screen/"/>
     <id>http://yoursite.com/2015/04/20/Working-with-Screen/</id>
     <published>2015-04-20T16:36:11.000Z</published>
-    <updated>2015-08-30T17:54:21.000Z</updated>
+    <updated>2015-08-30T20:36:41.000Z</updated>
     <content type="html"><![CDATA[<p>Place holder for working with Screen.</p>
 <p><a href="https://www.gnu.org/software/screen/" target="_blank" rel="external">https://www.gnu.org/software/screen/</a></p>
 <p>Move Mclaren machines to run with Screen in the background.</p>
@@ -268,7 +268,7 @@ hdmi_group=2
     
       <category term="Meteor" scheme="http://yoursite.com/tags/Meteor/"/>
     
-      <category term="NodeJS" scheme="http://yoursite.com/tags/NodeJS/"/>
+      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
     
       <category term="Screen" scheme="http://yoursite.com/tags/Screen/"/>
     
@@ -304,7 +304,7 @@ hdmi_group=2
     <link href="http://yoursite.com/2015/04/20/Meteor-with-NodeJS/"/>
     <id>http://yoursite.com/2015/04/20/Meteor-with-NodeJS/</id>
     <published>2015-04-20T14:08:37.000Z</published>
-    <updated>2015-08-30T17:54:21.000Z</updated>
+    <updated>2015-08-30T20:36:27.000Z</updated>
     <content type="html"><![CDATA[<p>Create a user called “meteor” with no password that must have sudo rights to work</p>
 <p>$ useradd meteor</p>
 <p>Install Meteor as the meteor user</p>
@@ -364,7 +364,7 @@ hdmi_group=2
     
       <category term="Meteor" scheme="http://yoursite.com/tags/Meteor/"/>
     
-      <category term="NodeJS" scheme="http://yoursite.com/tags/NodeJS/"/>
+      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
     
   </entry>
   
@@ -421,7 +421,7 @@ hdmi_group=2
     <link href="http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/"/>
     <id>http://yoursite.com/2015/04/18/Types-of-Blockquotes-in-Hexo/</id>
     <published>2015-04-18T13:11:57.000Z</published>
-    <updated>2015-08-30T17:54:21.000Z</updated>
+    <updated>2015-08-30T20:38:08.000Z</updated>
     <content type="html"><![CDATA[<blockquote><p>content …lorem ipsum dolor sit amet.</p>
 </blockquote>
 <blockquote><p>content</p>
@@ -444,7 +444,7 @@ hdmi_group=2
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
-      <category term="NodeJs" scheme="http://yoursite.com/tags/NodeJs/"/>
+      <category term="Node.js" scheme="http://yoursite.com/tags/Node-js/"/>
     
   </entry>
   
