@@ -87,10 +87,11 @@ firewall-cmd --zone=FedoraWorkstation --add-port=20/tcp</code></pre>
     <link href="http://yoursite.com/2015/05/01/Using-Vi/"/>
     <id>http://yoursite.com/2015/05/01/Using-Vi/</id>
     <published>2015-05-01T10:00:00.000Z</published>
-    <updated>2015-08-30T17:54:21.000Z</updated>
+    <updated>2015-10-24T12:09:39.000Z</updated>
     <content type="html"><![CDATA[<p>Learnt an interesting lesson: dont use arrow keys in Vi.</p>
 <p>Press ‘i’ to insert into the document.</p>
 <p>Press ‘o’ to go to the next line.</p>
+<p>to search, you can press “/“ followed by your key words.</p>
 <p>When Vi gets completly weird, try pressing escape followed with<br>:set nocompatible</p>
 ]]></content>
     <summary type="html">
